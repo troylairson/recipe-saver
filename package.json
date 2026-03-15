@@ -1,0 +1,34 @@
+{
+  "name": "recipe-saver",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare && find node_modules -path '*/esbuild/bin/esbuild' -not -path '*darwin-x64*' -exec cp node_modules/@esbuild/darwin-x64/bin/esbuild {} \\; 2>/dev/null || true",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "node scripts/migrate.mjs",
+    "db:studio": "drizzle-kit studio"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.36.3",
+    "@libsql/client": "^0.14.0",
+    "@nuxtjs/tailwindcss": "^6.11.4",
+    "drizzle-orm": "^0.40.0",
+    "node-html-parser": "^6.1.13",
+    "nuxt": "3.9.3",
+    "vue": "^3.4.15",
+    "vue-router": "^4.3.0",
+    "youtube-transcript": "^1.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.5",
+    "drizzle-kit": "^0.30.4",
+    "typescript": "^5.3.3"
+  },
+  "overrides": {
+    "nitropack": "2.8.1"
+  }
+}
