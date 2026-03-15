@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build && mkdir -p .netlify/static"
+  command = "npm run build && mkdir -p .netlify/static && cp -r .output/public/. .netlify/static/ 2>/dev/null || true"
   publish = ".netlify/static"
 
 [build.environment]
@@ -9,4 +9,3 @@
   from   = "/*"
   to     = "/.netlify/functions/server"
   status = 200
-  force  = true
