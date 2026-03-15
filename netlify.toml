@@ -1,17 +1,12 @@
 [build]
   command = "npm run build"
-  publish = ".output/public"
+  publish = ".netlify/static"
 
 [build.environment]
   NODE_VERSION = "20"
 
 [[redirects]]
-  from   = "/api/*"
+  from   = "/*"
   to     = "/.netlify/functions/server"
   status = 200
   force  = true
-
-[[redirects]]
-  from   = "/*"
-  to     = "/index.html"
-  status = 200
