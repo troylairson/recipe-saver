@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build && mkdir -p .netlify/static && cp -r .output/public/. .netlify/static/ 2>/dev/null || true"
+  command = "npm run build && echo '=== .output/public ===' && find .output/public -maxdepth 2 2>&1 | head -20 && echo '=== .netlify/static ===' && find .netlify/static -maxdepth 2 2>&1 | head -20 && mkdir -p .netlify/static"
   publish = ".netlify/static"
 
 [build.environment]
